@@ -5,3 +5,6 @@
 plots
 rawdata
 tables
+.Rdata
+.httr-oauth
+.DS_Store

@@ -70,7 +70,7 @@ parentsleep2_data$dataset_for_analysis <- data_p1 %>%
   mutate_all( ~ case_when(!is.nan(.x) ~ .x)) %>% 
   filter(str_detect(Completed,"yes|Yes", negate = FALSE)) %>% 
   mutate(actual_sleep_time_hours = actual_sleep_time/60,
-         Subjective_sleep_hours = Subjective_sleep_minutes*60) %>% 
+         Subjective_sleep_hours = Subjective_sleep_minutes/60) %>% 
   group_by(ID) %>% 
   mutate(within_subj_sleepduration_hours = actual_sleep_time_hours-mean(actual_sleep_time_hours, na.rm = T),
          between_subj_sleepduration_hours = mean(actual_sleep_time_hours, na.rm = T),
